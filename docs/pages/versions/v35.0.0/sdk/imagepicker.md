@@ -1,5 +1,6 @@
 ---
 title: ImagePicker
+sourceCodeUrl: "https://github.com/expo/expo/tree/sdk-35/packages/expo-image-picker"
 ---
 
 Provides access to the system's UI for selecting images and videos from the phone's library or taking a photo with the camera.
@@ -30,6 +31,8 @@ Display the system UI for choosing an image or a video from the phone's library.
 
   - **mediaTypes (_String_)** -- Choose what type of media to pick. Usage: `ImagePicker.MediaTypeOptions.<Type>`, where `<Type>` is one of: `Images`, `Videos`, `All`.
   - **allowsEditing (_boolean_)** -- Whether to show a UI to edit the image/video after it is picked. Images: On Android the user can crop and rotate the image and on iOS simply crop it. Videos: On iOS user can trim the video. Defaults to `false`.
+  - **allowsMultipleSelection (_boolean_)** -- (Web only) Whether or not to allow selecting multiple media files at once.
+
 
   A map of options for images:
 
