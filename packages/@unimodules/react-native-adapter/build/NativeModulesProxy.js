@@ -1,4 +1,5 @@
-import { NativeModules } from 'react-native';
+// @ts-ignore
+import { NativeModules, TurboModuleRegistry } from 'react-native';
 const NativeProxy = NativeModules.NativeUnimoduleProxy;
 const modulesConstantsKey = 'modulesConstants';
 const exportedMethodsKey = 'exportedMethods';
@@ -6,13 +7,14 @@ const NativeModulesProxy = {};
 if (NativeProxy) {
     Object.keys(NativeProxy[exportedMethodsKey]).forEach(moduleName => {
         NativeModulesProxy[moduleName] = NativeProxy[modulesConstantsKey][moduleName] || {};
+        const turboModule = TurboModuleRegistry.getEnforcing(moduleName);
         NativeProxy[exportedMethodsKey][moduleName].forEach(methodInfo => {
             NativeModulesProxy[moduleName][methodInfo.name] = async (...args) => {
                 const { key, argumentsCount } = methodInfo;
                 if (argumentsCount !== args.length) {
                     throw new Error(`Native method ${moduleName}.${methodInfo.name} expects ${argumentsCount} ${argumentsCount === 1 ? 'argument' : 'arguments'} but received ${args.length}`);
                 }
-                return await NativeProxy.callMethod(moduleName, key, args);
+                return await turboModule.callMethod(methodInfo.name, args);
             };
         });
         // These are called by EventEmitter (which is a wrapper for NativeEventEmitter)

@@ -1,4 +1,5 @@
-import { NativeModules } from 'react-native';
+// @ts-ignore
+import { NativeModules, TurboModuleRegistry } from 'react-native';
 
 const NativeProxy = NativeModules.NativeUnimoduleProxy;
 const modulesConstantsKey = 'modulesConstants';
@@ -15,6 +16,7 @@ const NativeModulesProxy: { [moduleName: string]: ProxyNativeModule } = {};
 if (NativeProxy) {
   Object.keys(NativeProxy[exportedMethodsKey]).forEach(moduleName => {
     NativeModulesProxy[moduleName] = NativeProxy[modulesConstantsKey][moduleName] || {};
+    const turboModule = TurboModuleRegistry.getEnforcing(moduleName);
     NativeProxy[exportedMethodsKey][moduleName].forEach(methodInfo => {
       NativeModulesProxy[moduleName][methodInfo.name] = async (
         ...args: unknown[]
@@ -27,7 +29,7 @@ if (NativeProxy) {
             } but received ${args.length}`
           );
         }
-        return await NativeProxy.callMethod(moduleName, key, args);
+        return await turboModule.callMethod(methodInfo.name, args);
       };
     });
 
