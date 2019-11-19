@@ -7339,10 +7339,25 @@ CACHE_KEYS:
       - "../../react-native-lab/react-native/ReactCommon/turbomodule/core/TurboModuleBinding.h"
       - "../../react-native-lab/react-native/ReactCommon/turbomodule/core/TurboModuleUtils.cpp"
       - "../../react-native-lab/react-native/ReactCommon/turbomodule/core/TurboModuleUtils.h"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/NativeSampleTurboCxxModuleSpecJSI.cpp"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/NativeSampleTurboCxxModuleSpecJSI.h"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/RCTNativeSampleTurboModuleSpec.h"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/RCTNativeSampleTurboModuleSpec.mm"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/RCTSampleTurboCxxModule.h"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/RCTSampleTurboCxxModule.mm"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/RCTSampleTurboModule.h"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/RCTSampleTurboModule.mm"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/SampleTurboCxxModuleLegacyImpl.cpp"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/platform/ios/SampleTurboCxxModuleLegacyImpl.h"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/SampleTurboCxxModule.cpp"
+      - "../../react-native-lab/react-native/ReactCommon/turbomodule/samples/SampleTurboCxxModule.h"
     PROJECT_NAME: ReactCommon
     SPECS:
+      - ReactCommon (0.61.4)
       - ReactCommon/jscallinvoker (0.61.4)
+      - ReactCommon/turbomodule (0.61.4)
       - ReactCommon/turbomodule/core (0.61.4)
+      - ReactCommon/turbomodule/samples (0.61.4)
   UMBarCodeScannerInterface:
     BUILD_SETTINGS_CHECKSUM:
       UMBarCodeScannerInterface: 0b7affbc39246c1e4ce2f9f58ebdc8c5
@@ -7465,8 +7480,8 @@ CACHE_KEYS:
       - UMPermissionsInterface (4.0.0)
   UMReactNativeAdapter:
     BUILD_SETTINGS_CHECKSUM:
-      UMReactNativeAdapter: acf88df652f06f17a79e206f413b6452
-    CHECKSUM: 73625f2e528296fff63a24308821f58f0becc345
+      UMReactNativeAdapter: 7f02b125e444192ebecc9c7a93c0f965
+    CHECKSUM: 1932b36846bd0b83f67bb035bbfe6d9c60714361
     FILES:
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/Services/UMReactFontManager.h"
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/Services/UMReactFontManager.m"
@@ -7477,6 +7492,8 @@ CACHE_KEYS:
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/Services/UMReactNativeEventEmitter.h"
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/Services/UMReactNativeEventEmitter.m"
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/UMBridgeModule.h"
+      - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/UMExportedModuleSpecJSI/UMExportedModuleSpecJSI.h"
+      - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/UMExportedModuleSpecJSI/UMExportedModuleSpecJSI.mm"
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/UMModuleRegistryAdapter/UMModuleRegistryAdapter.h"
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/UMModuleRegistryAdapter/UMModuleRegistryAdapter.m"
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/UMModuleRegistryAdapter/UMViewManagerAdapterClassesRegistry.h"
