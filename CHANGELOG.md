@@ -34,9 +34,11 @@ This is the log of notable changes to the Expo client that are developer-facing.
 - Added `canAskAgain` and `granted` fields to `PermissionsResponse`. ([#5061](https://github.com/expo/expo/pull/5061) by [@lukmccall](https://github.com/lukmccall))
 - Added support for `react-native-appearance` on Android and Web. ([#6162](https://github.com/expo/expo/pull/6162) by [@bbarthec](https://github.com/bbarthec))
 - Added a `exportPreset` field to `ImagePickerOptions`, which indicates dimensions and compression algorithm of exported video on iOS. ([#6046](https://github.com/expo/expo/pull/6046) by [@lukmccall](https://github.com/lukmccall))
+- Added `Location.getLastKnownPositionAsync` to get the last known position of the device. ([#6246](https://github.com/expo/expo/pull/6246) by [@lukmccall](https://github.com/lukmccall))
 
 ### 🐛 Bug fixes
 
+- Fixed `MediaPlayer` not working on some Android devices ([#6320](https://github.com/expo/expo/pull/6320) by [@mczernek](https://github.com/mczernek))
 - Fixed `Audio.setAudioModeAsync` to auto-fill with previously set values (falls back to default values) if not all fields are provided by [@cruzach](https://github.com/cruzach) ([#5593](https://github.com/expo/expo/pull/5593))
 - Fixed crash when `BarCodeScanner` was mounted more than 128 times. ([#5719](https://github.com/expo/expo/pull/5719) by [@geovannimp](https://github.com/geovannimp))
 - Fixed URI parsing in `expo-video-thumbnails`. ([#5711](https://github.com/expo/expo/pull/5711) by [@lukmccall](https://github.com/lukmccall))
